@@ -1,8 +1,13 @@
-import logo from "./logo.svg";
+import React, { useState } from "react";
+import Form from "./components/Form";
 import "./App.css";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Form />
+    </div>
+  );
 }
 
 export default App;
