@@ -3,12 +3,15 @@ import Form from "./components/Form";
 import "./App.css";
 
 //initial members list that we will set to state
-const membersList = [{ firstname: "Shane", lastname: "Kirk" }];
+const membersList = [
+  { name: "Shane", email: "shaanekirk@gmail.com", role: "student" },
+];
 
 //initialFormValues will hold initial slice of state for the form, same structure as memberslist
 const initialFormValues = {
-  firstname: "",
-  lastname: "",
+  name: "",
+  email: "",
+  role: "",
 };
 
 function App() {

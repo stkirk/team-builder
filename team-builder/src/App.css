@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.member-div {
+  border: 2px solid #ff8c00;
+  border-radius: 10px;
+  margin: 2% 5%;
+}
+
+.member-div p span {
+  font-weight: bold;
+}
