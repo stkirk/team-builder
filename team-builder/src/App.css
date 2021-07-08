@@ -46,3 +46,10 @@
 .member-div p span {
   font-weight: bold;
 }
+
+input {
+  margin: 1% auto;
+}
+select {
+  margin: 1% auto;
+}
