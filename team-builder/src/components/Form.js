@@ -16,12 +16,25 @@ export default function Form(props) {
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const submitHandler = (evt) => {};
+  const submitHandler = (evt) => {
+    evt.preventDefault();
+    // debugger;
+    //newMember pulls my form data from state
+    const newMember = {
+      name: formValues.name.trim(),
+      email: formValues.email.trim(),
+      role: formValues.role,
+    };
+    //update members slice of state to include new submission
+    setMembers([...members, newMember]);
+    //wipe the form clean upon submission
+    setFormValues(initialFormValues);
+  };
 
   return (
     <div className="container">
       <div className="form-container">
-        <form>
+        <form onSubmit={submitHandler}>
           <label>
             Member Name:
             <input
