@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function Form(props) {
   //deconstruct intial slices of state passed as props
-  const { initialFormValues, membersList } = props;
+  const { initialFormValues, membersList, updateForm } = props;
 
   //set our initial values as slices of state
   const [members, setMembers] = useState(membersList);
@@ -25,6 +25,10 @@ export default function Form(props) {
       email: formValues.email.trim(),
       role: formValues.role,
     };
+    //prevent submission if fields are empty
+    if (!newMember.name || !newMember.email || !newMember.role) {
+      return;
+    }
     //update members slice of state to include new submission
     setMembers([...members, newMember]);
     //wipe the form clean upon submission
@@ -78,7 +82,7 @@ export default function Form(props) {
           <button>Add New Member!</button>
         </form>
       </div>
-
+      <h2>Members List</h2>
       {members.map((member) => {
         return (
           <div className="member-div" key={member.email}>

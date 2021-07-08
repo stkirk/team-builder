@@ -15,6 +15,8 @@ const initialFormValues = {
 };
 
 function App() {
+  //helper functions to be handed down as props
+
   return (
     <div className="App">
       <h1>Team Builder</h1>
