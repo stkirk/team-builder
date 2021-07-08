@@ -9,7 +9,12 @@ export default function Form(props) {
   const [formValues, setFormValues] = useState(initialFormValues);
 
   //change handler and submit handler **MOVE TO APP LATER, PASS AS PROPS
-  const changeHandler = (evt) => {};
+  const changeHandler = (evt) => {
+    // debugger;
+    const { name, value } = evt.target;
+
+    setFormValues({ ...formValues, [name]: value });
+  };
 
   const submitHandler = (evt) => {};
 
@@ -56,12 +61,14 @@ export default function Form(props) {
               <option value="yoda">Grand Master</option>
             </select>
           </label>
+          <br />
+          <button>Add New Member!</button>
         </form>
       </div>
 
       {members.map((member) => {
         return (
-          <div class="member-div" key={member.email}>
+          <div className="member-div" key={member.email}>
             <h3>{member.name}</h3>
             <p>
               <span>Email:</span> {member.email}
